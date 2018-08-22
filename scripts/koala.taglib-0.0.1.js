@@ -1,3 +1,7 @@
+/**
+* 基于JQuery的自定义标签库, 可扩展
+* By Junnyblue, 2018-8-22
+*/
 ;
 (function($) {
 	var profix = koala().name;

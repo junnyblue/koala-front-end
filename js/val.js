@@ -1,17 +1,22 @@
 $(function () {
+    // 初始化ajax参数,默认使用post方式同步提交
     koala.initAjax();
+    // 关闭服务器log写入
+    koala.loggeroff();
+    // 设置日志参数, 包括服务器log写入URL,以及root level
     koala.setupLogger({
         URL: "http://localhost:8080/ssmdemo/logwriter",
         root: "INFO"
     });
-    koala.loggeroff();
+
     $.validate({
         // 统一设定触发验证的事件
         events: "change",
+        // 统一设定验证失败的动作为弹出toast提示框
         error: function (msg) {
             var $this = $(this);
             $this.attr("title", msg);
-            $(this).css("border-color", "#FF0000");
+            //$(this).css("border-color", "#FF0000");
             $K.toast({
                 base: "body",
                 message: msg,
@@ -23,10 +28,10 @@ $(function () {
 
         },
         success: function () {
-            $(this).css("border-color", "rgb(180,180,180)").removeAttr("title");
+            $(this).removeAttr("title");
 
         },
-
+        // 定制验证类型
         validators: {
             required: "#username, #pwd, #comfirm-pwd, #email, #city",
             equalTo: {
