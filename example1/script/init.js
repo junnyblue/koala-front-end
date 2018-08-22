@@ -39,7 +39,7 @@ $(function () {
     });
 
     $("#c1").change(function () {
-        var isChecked = $(this).attr("checked");
+        var isChecked = $(this).prop("checked");
         if (isChecked) {
             $("#t1").reset().attr("disabled", true);
             $("#t1").val("");
