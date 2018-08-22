@@ -308,16 +308,46 @@
         } else {
             var validator = !!config ? config.validators : null;
         }
+        ///- add by Junny, 2018-8-22, 添加提交按钮默认验证行为
+        if (koala.isExists($.validation.submit)) {
+            var submit = {};
+            if (typeof ($.validation.submit) === 'string') {
+                submit.element = $.validation.submit;
+            } else {
+                submit = $.validation.submit;
+            }
+            submit = $.extend({
+                target: "body *",
+                events: "click"
+            }, submit);
+
+            // 绑定提交前的验证事件， 如果验证不成功，则阻止提交的后续操作
+            $(submit.element).on(submit.events + ".submit", function (event) {
+                var result = $(submit.target).valResult();
+                if (!result.isOK) {
+                    result.trigger();
+                    // 阻止后续动作
+                    event.stopImmediatePropagation();
+
+                    return false;
+                }
+                return true;
+            })
+        }
+
+
+        //:~ end add
+
         ///- add by junny, 2018-8-21
 
-        $.validation.defaultEvents = config.events || $.validation.defaultEvents;
+        $.validation.defaultEvents = $.validation.events || $.validation.defaultEvents;
         //:~ end
         if (validator) {
             for (key in validator) {
                 ///- modified by junny, 2018-8-21
                 var type = $.validation.validators[key].type || key;
                 var val = $.validation.validators[type];
-                if(type != key){
+                if (type != key) {
                     val = $.extend(val, $.validation.validators[key]);
                 }
                 var target = $.validation.validators[key].target || val.target;

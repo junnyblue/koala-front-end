@@ -2,6 +2,7 @@ $(function() {
 	koala.initAjax();
 	/* 全局参数设定, 启动验证框架 */
 	$.validate({
+        submit : "#btn",
 		errorPlacement : "#toast",
 		error : function(msg) {
 			var $this = $(this);

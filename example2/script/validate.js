@@ -10,8 +10,15 @@ $(function () {
     });
 
     $.validate({
+        // 设置提交前验证的统一动作
+        submit: {
+            element: "#btn", // 触发提交的控件, 一般是一个按钮, 必需
+            target: "#t1 *", // 需要验证的控件, 可选,默认是 "body *"
+            events: "click" // 触发提交的事件, 默认是click
+
+        },
         // 统一设定触发验证的事件
-        events: "change",
+        events: "validate",
         // 统一设定验证失败的动作为弹出toast提示框
         error: function (msg) {
             var $this = $(this);
@@ -78,13 +85,6 @@ $(function () {
 
     });
 
-    $("#btn").click(function () {
-        var result = $("#t1 *").valResult();
-        if (result.isOK == false) {
-            result.trigger();
-            return;
-        }
-        alert($("#t1 *").serialize());
-    })
+
 
 })
