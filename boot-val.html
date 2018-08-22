@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h3>
+			验证框架测试<small>v1.0.0</small>
+		</h3>
+		<p class="lead">
+			<abbr title="Koala前端框架">koala</abbr>.validate是一个通用的验证框架，完成异步的前台以及后台的数据验证。
+			可扩展，可定制，灵活方便，能够节省大量验证编码工作
+		</p>
+		<p>一般的页面验证的方法，启动框架预设的验证类型：</p>
+		<p>
+			如下所示，给控件添加
+			<code>required</code>
+			属性以进行必需的验证
+		</p>
+		<pre>
+&lt;script&gt;
+/* 全局参数设定, 启动验证框架 */
+$.validate();
+&lt;/script&gt;
+&lt;body&gt;
+	&lt;!-- 为文本框添加required验证 --&gt;
+	&lt;input required&gt;
+&lt;/body&gt;
+
+</pre>
+		<p>也可以定制和添加自定义的验证类型</p>
+		<pre>
+&lt;script&gt;
+/* 全局参数设定, 添加自定义的验证, 并启动验证框架 */
+$.validate({
+	validators : {
+		/*添加文本框的输入规则,不能输入'admin'*/
+		forbid : {
+			target : "#text",
+			type : "forbid",
+			message : "这个词禁止输入",
+			handler : function(value){
+				return value != "admin";
+			}
+		}
+	}
+});
+&lt;/script&gt;
+&lt;body&gt;
+	&lt;input id="text" required&gt;
+&lt;/body&gt;	
+</pre>
+<blockquote class="pull-right">
+  请看一个完整的表单验证的例子
+  <small><a href="validate-new.html">表单验证的例子</a></small>
+</blockquote>
+	</div>
+	<script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="scripts/koala-1.1.0.js"></script>
+	<script type="text/javascript" src="scripts/koala.validate-1.0.0.js"></script>
+</body>
+</html>

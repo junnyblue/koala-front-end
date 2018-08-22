@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/jquery.toastmessage.css">
+</head>
+<body>
+
+	<div class="container">
+		<form role="form" id="testForm" class="bs-example bs-example-form">
+			<div class="form-group">
+				<label for="name">姓名</label> <input type="text"
+					class="form-control required" name="name" id="name"
+					placeholder="请输入姓名">
+			</div>
+			<div class="form-group">
+				<label for="age"> 年龄</label> <input type="text" id="age" digits
+					range="(0,120]" class="form-control" name="age" placeholder="请输入年龄">
+				<p class="help-block">年龄必须是数字，且在0~120之间但不能为0。</p>
+			</div>
+			<div class="form-group">
+				<label for="birthday"> 生日</label> <input id="birthday" type="text"
+					date class="form-control text" name="birthday">
+				<p class="help-block">日期的格式为 YYYY-MM-DD。</p>
+			</div>
+			<div class="form-group">
+				<label for="pwd"> 密码 </label><input id="pwd" type="password"
+					class="form-control required digits text" name="pwd" minsize="5">
+			</div>
+			<div class="form-group">
+				<label for="comfirm-pwd"> 确认密码 </label> <input id="comfirm-pwd"
+					equals="#pwd" type="password" class="form-control required text"
+					minsize="5">
+			</div>
+			<div class="form-group">
+				<label for="email"> 邮箱 </label> <input id="email"
+					class="form-control required email text" type="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="city"> 所在城市: </label> <select id="city" required
+					name="city">
+					<option value="0">请选择</option>
+					<option value="1">沈阳</option>
+					<option value="2">大连</option>
+				</select>
+			</div>
+			<label for="habits">兴趣爱好</label>
+			<div class="checkbox" id="habits" min-num="2">
+				<label class="checkbox-inline"> <input type="checkbox"
+					name="habit" value="reading">读书
+				</label> <label class="checkbox-inline"> <input type="checkbox"
+					name="habit" value="trip"> 旅游
+				</label> <label class="checkbox-inline"> <input type="checkbox"
+					name="habit" value="swimming"> 游泳
+				</label>
+			</div>
+			<div class="form-group">
+				<label for="t1">备注</label>
+				<textarea class="form-control required" rows="3" id="t1"
+					disabled="disabled" name="signment"></textarea>
+			</div>
+			<div class="checkbox">
+				<label> <input type="checkbox" id="c1" checked="checked">忽略备注
+				</label>
+			</div>
+			<button type="submit" class="btn btn-default">提交</button>
+		</form>
+	</div>
+	<script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="scripts/jquery.toastmessage.js"></script>
+	<script type="text/javascript" src="scripts/koala-1.1.1.js"></script>
+	<script type="text/javascript" src="scripts/koala.validate-1.0.0.js"></script>
+	<script type="text/javascript" src="scripts/boot-val.js"></script>
+</body>
+</html>

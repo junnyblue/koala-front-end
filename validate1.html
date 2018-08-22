@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/koala.toast.css">
+   
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="form1">
+        <table cellpadding="3px" id="t1">
+            <tr>
+                <td><label for="username">用户名:</label></td>
+                <td><input class="form_control" id="username" dup="js/user.json" placeholder="用户名" name="username"></td>
+            </tr>
+            <tr>
+                <td><label for="age"> 年龄: </label></td>
+                <td><input id="age" class="form_control text" name="age"></td>
+            </tr>
+            <tr>
+                <td><label for="birthday"> 生日: </label></td>
+                <td><input id="birthday" type="text" class=" form_control text" name="birthday"></td>
+            </tr>
+            <tr>
+                <td><label for="pwd"> 密码: </label></td>
+                <td><input id="pwd" type="password" class="text form_control" name="pwd"></td>
+            </tr>
+            <tr>
+                <td><label for="comfirm-pwd"> 确认密码: </label></td>
+                <td><input id="comfirm-pwd" type="password" class=" form_control text"></td>
+            </tr>
+            <tr>
+                <td>邮箱:</td>
+                <td><input id="email" class="text form_control" type="text" name="email" data-title="邮箱"></td>
+            </tr>
+            <tr>
+                <td><label for="city"> 所在城市: </label></td>
+                <td><select id="city" name="city" class="form_control">
+								<option value="0">请选择</option>
+								<option value="1">沈阳</option>
+								<option value="2">大连</option>
+						</select></td>
+            </tr>
+            <tr>
+                <td><label for="habits"> 爱好 : </label></td>
+                <td id="habits" min-num="2"><label for="reading"> <input
+								type="checkbox" name="habit" value="reading" id="reading">读书
+						</label> <label for="trip"> <input type="checkbox" name="habit"
+								value="trip" id="trip"> 旅游
+						</label> <label for="swimming"> <input type="checkbox"
+								name="habit" value="swimming" id="swimming">游泳
+						</label></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="button" value="OK" id="btn"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="scripts/jquery-1.7.2.js"></script>
+    <script src="scripts/koala-1.1.1.js"></script>
+    <script src="scripts/koala.validate-1.0.0.js"></script>
+    <script src="scripts/koala.logger-0.0.1.js"></script>
+    <script src="js/val.js"></script>
+</body>
+
+</html>

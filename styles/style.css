@@ -1,0 +1,146 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: "Comic Sans MS", "宋体";
+}
+
+.float-close {
+	z-index: 99;
+	position: absolute;
+	float: right;
+	height: 10px;
+	width: auto;
+}
+
+.btn_anchor {
+	DISPLAY: block;
+}
+
+.form_control {
+	width: 180px;
+	border: 1px solid rgb(180, 180, 180);
+	border-radius: 5px 5px 5px 5px;
+	font-size: 14px;
+	height: 25px;
+	line-height: 25px;
+	margin-right: 10px;
+	padding: 2px;
+}
+
+.area {
+	height: 100px;
+	resize: none;
+}
+
+label {
+	text-align: justify;
+}
+
+select {
+	width: 180px;
+	height: 23px;
+	line-height: 23px;
+}
+
+input.text {
+	width: 180px
+}
+
+div {
+	border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+}
+
+.header .title {
+	font-family: "Corbel";
+	text-align: left;
+	width: 100px;
+	background-color: #b2bfc5;
+	float: left;
+	border-radius: 10px 0 0 0;
+	-moz-border-radius: 10px 0 0 0;
+	-webkit-border-radius: 10px 0 0 0;
+	padding-top: 5px;
+	DISPLAY: block;
+	color: #FFFFFF;
+	height: 25px;
+	padding-left: 10px;
+}
+
+.closeBtn {
+	font-family: "Corbel";
+	font-size: 25px;
+	line-height: 25px;
+	height: 25px;
+	width: 60px;
+	background-color: #b2bfc5;
+	float: right;
+	border-radius: 0 10px 0 0;
+	-moz-border-radius: 0 10px 0 0;
+	-webkit-border-radius: 0 10px 0 0;
+	color: #e2dedc;
+	text-decoration: none;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	DISPLAY: block;
+}
+
+.closeBtn:HOVER {
+	background: -moz-linear-gradient(left, #b2bfc5, #6e90ae);
+	/* Safari 5.1+, Chrome 10+ */
+	background: -webkit-linear-gradient(left, #b2bfc5, #6e90ae);
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(left, #b2bfc5, #6e90ae);
+	background-color: #6e90ae;
+	color: #FFFFFF;
+}
+
+.mask {
+	color: #C7EDCC;
+	background-color: #bdb1a9;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	filter: Alpha(Opacity =                             60);
+	-moz-opacity: 0.60; /*支持 FireFox 浏览器*/
+	opacity: 0.60; /*支持 Chrome, Opera, Safari 等浏览器*/
+}
+
+.header {
+	width: 100%;
+	margin: 0px;
+	text-align: right;
+	background: #b2bfc4;
+	margin-bottom: 1px;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Chrome/Safari/Opera */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+	height: 30px; /* Non-prefixed version, currently
+not supported by any browser */
+}
+
+#body {
+	padding: 10px 20px
+}
+
+.drag {
+	z-index: 99;
+	position: absolute;
+	background: #e2dedc;
+	display: none;
+	top: 100px;
+	left: 100px;
+	padding: 0px;
+	width: 400px;
+}
+
+.triangle-bottomleft {
+	width: 0;
+	height: 0;
+	border-bottom: 100px solid red;
+	border-right: 100px solid transparent;
+}

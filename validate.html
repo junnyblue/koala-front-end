@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:koala>
+
+<head>
+    <title>验证框架测试</title>
+
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/koala.toast.css">
+    <link rel="stylesheet" type="text/css" href="styles/koala.triangle-button.css">
+</head>
+
+<body>
+    <div class="drag">
+        <koala:header close-btn="yes">用户注册</koala:header>
+        <div id="body">
+            <form id="form1">
+                <table cellpadding="3px">
+                    <tr>
+                        <td><label for="username">用户名:</label></td>
+                        <td><input class="required form_control" id="username" maxsize="20" minsize="2" name="username" standard></td>
+                    </tr>
+                    <tr>
+                        <td><label for="age"> 年龄: </label></td>
+                        <td><input id="age" range="(0,120]" digits class="form_control text" name="age"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="birthday"> 生日: </label></td>
+                        <td><input id="birthday" type="text" date class=" form_control text" name="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pwd"> 密码: </label></td>
+                        <td><input id="pwd" type="password" class="required digits text form_control" name="pwd" minsize="5"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="comfirm-pwd"> 确认密码: </label></td>
+                        <td><input id="comfirm-pwd" equals="#pwd" type="password" class="required form_control text" minsize="5"></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱:</td>
+                        <td><input id="email" class="required email text form_control" type="text" name="email" data-title="邮箱"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="city"> 所在城市: </label></td>
+                        <td><select id="city" required name="city" class="form_control">
+								<option value="0">请选择</option>
+								<option value="1">沈阳</option>
+								<option value="2">大连</option>
+						</select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="habits"> 爱好 : </label></td>
+                        <td id="habits" min-num="2"><label for="reading"> <input
+								type="checkbox" name="habit" value="reading" id="reading">读书
+						</label> <label for="trip"> <input type="checkbox" name="habit"
+								value="trip" id="trip"> 旅游
+						</label> <label for="swimming"> <input type="checkbox"
+								name="habit" value="swimming" id="swimming">游泳
+						</label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="c1"> 忽略备注： </label></td>
+                        <td><input type="checkbox" id="c1" checked="checked" /></td>
+                    </tr>
+                    <tr>
+                        <td><label for="t1"> 备注: </label></td>
+                        <td><textarea rows="5" cols="20" id="t1" disabled="disabled" name="signment" class="form_control area required"></textarea> <span id="msg"></span></td>
+                    </tr>
+
+                </table>
+            </form>
+            <input type="button" value="OK" id="btn" style="display: none">
+            <button id="reset" style="display: none">reset</button>
+
+        </div>
+        <koala:triangle position="bottomright">OK</koala:triangle>
+    </div>
+    <input type="button" value="注册" id="reg">
+
+    <script type="text/javascript" src="scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="scripts/koala-1.1.1.js"></script>
+    <script type="text/javascript" src="scripts/koala.validate-1.0.0.js"></script>
+    <script type="text/javascript" src="scripts/koala.taglib.js"></script>
+    <script type="text/javascript" src="scripts/validate.js"></script>
+    <script type="text/javascript" src="scripts/init.js"></script>
+    <script type="text/javascript" src="scripts/draggable.js"></script>
+</body>
+
+</html>

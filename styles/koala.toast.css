@@ -1,0 +1,15 @@
+.toast {
+    z-index: 100;
+    position: absolute;
+    display: none;
+    width: auto;
+    height: 20px;
+    background: #5e6182;
+    font-family: Arial;
+    border: 2px solid #b2bfc5;
+    padding: 10px 30px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
