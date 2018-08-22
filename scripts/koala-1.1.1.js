@@ -1,5 +1,6 @@
 /**
  * Koala - 1.1.1 By Junny L Blue 2017-3-3
+ * 基于JQuery的工具集, 持续增加中
  */
 
 ! function ($) {
