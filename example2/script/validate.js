@@ -2,14 +2,14 @@ $(function () {
     // 初始化ajax参数,默认使用post方式同步提交
     koala.initAjax();
     // 关闭服务器log写入
-    koala.loggeroff();
+    koala.loggeron();
     // 设置日志参数, 包括服务器log写入URL,以及root level
     koala.setupLogger({
         URL: "http://localhost:8080/ssmdemo/logwriter",
         root: "INFO"
     });
 
-    $.validate({
+    $.validationSetup({
         // 设置提交前验证的统一动作
         submit: {
             element: "#btn", // 触发提交的控件, 一般是一个按钮, 必需
@@ -25,7 +25,7 @@ $(function () {
             $this.attr("title", msg);
             //$(this).css("border-color", "#FF0000");
             $K.toast({
-                base: "body",
+                base: "#form1",
                 message: msg,
                 speed: 1200,
                 callback: function () {

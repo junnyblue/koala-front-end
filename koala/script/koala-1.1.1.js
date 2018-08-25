@@ -30,6 +30,7 @@
             spaceanywhere: /\s+/g,
             BIG_NUMBER: 1e+100,
             SMALL_NUMBER: -1e+100,
+            islogwriting: false,
             initAjax: function (options) {
                 options = $.extend({}, {
                     //url: "/s2sh", // 默认URL
@@ -152,6 +153,46 @@
                     }, options.speed, options.callback);
                 }
 
+            },
+            /**
+             * koala log manager
+             */
+            logger: {
+                URL: "",
+                root: "DEBUG",
+                dir: function (msg) {
+                    logger.log($.param(msg));
+                },
+                error: function (msg) {
+                    logger.log(msg, "ERROR");
+                },
+                debug: function (msg) {
+                    logger.log(msg, "DEBUG");
+                },
+                info: function (msg) {
+                    logger.log(msg, "INFO");
+                },
+                warning: function (msg) {
+                    logger.log(msg, "WARNING");
+                },
+                log: function (message, level) {
+                    if (koala.islogwriting && logger.URL) {
+                        level = level || logger.root;
+                        new Image().src = logger.URL + "?level=" + level + "&message=[PAGE]" + message;
+                    }
+                }
+            },
+            setupLogger: function (config) {
+                if (koala.isExists(config)) {
+                    $.extend(koala.logger, config);
+                }
+            },
+            
+            loggeron: function () {
+                koala.islogwriting = true;
+            },
+            loggeroff: function () {
+                koala.islogwriting = false;
             }
 
         });
@@ -161,6 +202,18 @@
 
     window.koala = window.$K = koala;
 
+    window.logger = koala.logger;
+    window.console = window.console || koala.logger;
+    console.log ||
+        (console.log = window.opera ? opera.postError : koala.logger.log);
+    console.dir || (console.dir = koala.logger.dir);
+
+    /**
+     * 添加字符串常用方法
+     */
+    /**
+     * 模仿Java中的equals方法, 判断两字符串是否相等
+     */
     _string.equals = function (otherStr) {
         return otherStr.toString() == this;
     };
@@ -226,4 +279,4 @@
         var reg = new RegExp("(^" + synx + "*)|(" + synx + "*$)", "g");
         return this.toString().replace(reg, '');
     }
-}(jQuery);
+}(window.jQuery);

@@ -1,5 +1,8 @@
 $(function() {
 	koala.initAjax();
+    // 启动自定义标签
+    $.setupTags();
+    
 	/* 全局参数设定, 启动验证框架 */
 	$.validate({
         submit : "#btn",
@@ -10,6 +13,10 @@ $(function() {
 			koala.toast({
 				base : $(".drag"),
 				message : msg,
+                top : function(baseHeight, toaseHeight){
+                    return  baseHeight*3/4;
+                    
+                },
 				callback : function() {
 					$this.focus();
 				}

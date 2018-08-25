@@ -76,8 +76,9 @@
 	};
 
 	$.extend({
-		setupTags : function() {
-			for (tag in tags) {
+		setupTags : function(config) {
+            var ts = $.extend(true, tags, config);
+			for (tag in ts) {
 				var elem = $(profix + "\\:" + tag);
 				var setup = tags[tag].setup;
 				if (koala.isExists(elem)) {
@@ -89,6 +90,4 @@
 			}
 		}
 	});
-
-	$.setupTags();
 })(jQuery);
