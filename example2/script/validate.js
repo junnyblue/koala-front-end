@@ -18,7 +18,7 @@ $(function () {
 
         },
         // 统一设定触发验证的事件
-        events: "validate",
+        events: "action",
         // 统一设定验证失败的动作为弹出toast提示框
         error: function (msg) {
             var $this = $(this);
@@ -27,7 +27,7 @@ $(function () {
             $K.toast({
                 base: "body",
                 message: msg,
-                speed: 3000,
+                speed: 1200,
                 callback: function () {
                     $this.focus();
                 }
