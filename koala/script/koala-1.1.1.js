@@ -52,7 +52,6 @@
                         console.log('Error when sending request to "' + this.url + '", [' + jqXHR.status + ']:' + errorMsg, textStatus);
                     }
                 }, options);
-                console.log("koala init ajax.")
                 $.ajaxSetup(options);
             },
             getRandomString: function (len) {
@@ -141,12 +140,10 @@
                     }
 
                     toast.stop(true).html(options.message).css({
-                        //                        marginLeft: (0 - toast.width()) / 2,
-                        //                        marginTop: (0 - toast.height()) / 2,
-                        //                        top: options.top,
-                        //                        left: options.left,
                         left: options.left(parent.width(), toast.width()),
                         top: options.top(parent.height(), toast.height()),
+                        marginLeft: (0 - toast.width()) / 2,
+                        marginTop: (0 - toast.height()) / 2,
                         opacity: 1
                     }).show().animate({
                         opacity: "hide"
@@ -187,7 +184,7 @@
                     $.extend(koala.logger, config);
                 }
             },
-            
+
             loggeron: function () {
                 koala.islogwriting = true;
             },
@@ -215,7 +212,7 @@
      * 模仿Java中的equals方法, 判断两字符串是否相等
      */
     _string.equals = function (otherStr) {
-        return otherStr.toString() == this;
+        return otherStr && otherStr.toString() == this;
     };
     _string.removeSpaces = function () {
         return this.replace(/\s+/g, "");

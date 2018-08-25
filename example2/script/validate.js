@@ -72,7 +72,7 @@ $(function () {
                 events: "blur",
                 handler: function (value) {
                     var username;
-                    logger.log("验证用户名" + value + "是否冲突....")
+                    logger.dir("验证用户名" + value + "是否冲突....")
                     $.get($(this).attr("dup"), function (data) {
                         if (data) {
                             username = data.username;
