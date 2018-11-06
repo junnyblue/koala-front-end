@@ -31,6 +31,11 @@
             BIG_NUMBER: 1e+100,
             SMALL_NUMBER: -1e+100,
             islogwriting: false,
+            taglib: {
+                hello : function(e){
+                    return $("<span></span>").html("Hello " + (e.html()||e.attr("name")||koala().koala));
+                }
+            },
             initAjax: function (options) {
                 options = $.extend({}, {
                     //url: "/s2sh", // 默认URL
@@ -150,6 +155,24 @@
                     }, options.speed, options.callback);
                 }
 
+            },
+            /**
+             * koala tag lib setup
+             */
+            setupTags: function (config, namespace) {
+                var ts = $.extend(true, koala.taglib, config);
+                var profix = namespace || koala().name;
+                for (tag in ts) {
+                    var elem = $(profix + "\\:" + tag);
+                    var setup = ts[tag];
+                    if (koala.isExists(elem)) {
+                        elem.each(function (index, e) {
+                            var obj = setup.call(e, $(e));
+                            obj && $(e).replaceWith(obj);
+                        });
+
+                    }
+                }
             },
             /**
              * koala log manager
