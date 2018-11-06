@@ -197,13 +197,6 @@
         return koala;
     })();
 
-    window.koala = window.$K = koala;
-
-    window.logger = koala.logger;
-    window.console = window.console || koala.logger;
-    console.log ||
-        (console.log = window.opera ? opera.postError : koala.logger.log);
-    console.dir || (console.dir = koala.logger.dir);
 
     /**
      * 添加字符串常用方法
@@ -276,4 +269,13 @@
         var reg = new RegExp("(^" + synx + "*)|(" + synx + "*$)", "g");
         return this.toString().replace(reg, '');
     }
+
+    window.koala = window.$K = koala;
+
+    window.logger = koala.logger;
+    window.console = window.console || koala.logger;
+    console.log ||
+        (console.log = window.opera ? opera.postError : koala.logger.log);
+    console.dir || (console.dir = koala.logger.dir);
+
 }(window.jQuery);

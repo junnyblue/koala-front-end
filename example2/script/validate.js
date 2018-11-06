@@ -57,7 +57,7 @@ $(function () {
                 target: "#birthday",
                 type: "range",
                 range: "(0, 60)",
-                message: "生日不能大于60"
+                message: "{0}不能大于60"
             },
             age: {
                 target: "#age",
@@ -72,7 +72,7 @@ $(function () {
                 events: "blur",
                 handler: function (value) {
                     var username;
-                    logger.dir("验证用户名" + value + "是否冲突....")
+                    //logger.dir("验证用户名" + value + "是否冲突....")
                     $.get($(this).attr("dup"), function (data) {
                         if (data) {
                             username = data.username;
