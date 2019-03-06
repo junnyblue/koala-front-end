@@ -412,6 +412,39 @@
             }
 
         },
+
+        ///- add by Junnyblue, 2019-3-6, 动态绑定验证方法
+        appendValidation: function (type, events, handler) {
+            var argus = arguments;
+            var config = {};
+            if (argus.length > 0) {
+                if (typeof type == "string") {
+                    config = {
+                        type: type
+                    };
+                } else {
+                    config = $.extend({}, config, type);
+                }
+                if (typeof events == 'string') {
+                    config = $.extend(true, config, {
+                        events: events
+                    });
+                }
+                if (handler && $.isFunction(handler)) {
+                    config = $.extend(true, config, {
+                        handler: handler
+                    });
+                }
+            }
+
+
+
+
+            this.validate(config);
+            return this;
+        },
+        //:~ end
+
         /**
          * 向指定控件添加验证动作的方法，同一类验证可同时绑定到多个控件，一个控件上也可以同时绑定多种类型的验证
          * 

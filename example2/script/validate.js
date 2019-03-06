@@ -45,9 +45,6 @@ $(function () {
                 target: "#comfirm-pwd",
                 equals: "#pwd"
             },
-            email: {
-                target: "#email"
-            },
             format: {
                 target: "#age, #birthday",
                 format: "^[0-9]*$",
