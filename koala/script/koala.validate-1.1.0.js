@@ -1,5 +1,5 @@
 /**
- * jQuery validate plugin 1.0.0
+ * jQuery validate plugin 1.1.0
  * 
  * 通用的验证框架，完成异步的前台以及后台的数据验证。 可扩展，可定制，灵活方便，能够节省大量验证编码工作
  * 
