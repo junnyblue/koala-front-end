@@ -1,0 +1,18 @@
+table {
+    border : 1px solid black;
+    border-collapse: collapse;
+    
+}
+
+th, td{
+    border : 1px solid black;
+    padding : 5px;
+}
+
+th{
+    background-color: darkcyan;
+}
+
+div.container{
+    margin : 0px auto;
+}

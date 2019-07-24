@@ -27,7 +27,7 @@ $(function () {
             $K.toast({
                 base: "#form1",
                 message: msg,
-                speed: 1200,
+                speed: 2400,
                 callback: function () {
                     $this.focus();
                 }
