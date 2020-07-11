@@ -32,8 +32,8 @@
             SMALL_NUMBER: -1e+100,
             islogwriting: false,
             taglib: {
-                hello : function(e){
-                    return $("<span></span>").html("Hello " + (e.html()||e.attr("name")||koala().koala));
+                hello: function (e) {
+                    return $("<span></span>").html("Hello " + (e.html() || e.attr("name") || koala().koala));
                 }
             },
             initAjax: function (options) {
